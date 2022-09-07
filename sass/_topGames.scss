@@ -1,0 +1,181 @@
+.top-games {
+  padding-bottom: 8rem;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(30rem, 35rem));
+    grid-column-gap: 3rem;
+    justify-content: space-evenly;
+    align-content: stretch;
+    padding: 3rem;
+    @media only screen and (max-width: $bp-lg) {
+      grid-template-columns: repeat(3, minmax(20rem, 30rem));
+    }
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: 1fr;
+      padding: 6rem 25%;
+      row-gap: 6rem;
+    }
+    @media only screen and (max-width: $bp-sm){
+      padding: 6rem 15%;
+    } 
+  }
+
+  &__card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    height: 100%;
+    position: relative;
+
+    &:hover &__side--front {
+      transform: rotateY(-180deg);
+    }
+    &:hover &__side--back {
+      transform: rotateY(0);
+    }
+
+    &__side {
+      width: 100%;
+      height: 100%;
+      transition: all 0.5s linear;
+      overflow: hidden;
+      box-shadow: $shadow-light;
+      backface-visibility: hidden;
+
+      font-size: 1.6rem;
+      border-radius: 5px;
+      color: $color-secondary;
+    }
+
+    &__side--front {
+      background-color: rgba($color-gery-light, 1);
+    }
+
+    &__side--back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5rem 3rem;
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.8),
+          rgba($color-primary-dark, 0.8)
+        ),
+        url(../imgs/console-bg.jpg);
+      background-size: cover;
+      transform: rotateY(180deg);
+
+      display: grid;
+      justify-items: center;
+      align-self: center;
+      text-align: center;
+      color: rgba($color-gery-light, 1);
+      text-transform: uppercase;
+      font-family: $font-display;
+      grid-template-rows: 1fr repeat(3, min-content);
+      @media only screen and (max-width: $bp-lg) {
+        padding-bottom: 8rem;
+      }
+    }
+  }
+  &__img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/5;
+    background-size: cover;
+    &-1 {
+      background-image: url(../imgs/top_legend_of_zelda.webp);
+    }
+    &-2 {
+      background-image: url(../imgs/top_ff7_remake_lg.jpg);
+    }
+    &-3 {
+      background-image: url(../imgs/top_fifa22.jpg);
+    }
+  }
+
+  &__name {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: end;
+    background-color: rgba($color-primary-light, 0.3);
+    padding: 1rem;
+    font-family: $font-display;
+    line-height: 1.8rem;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  &__detail {
+    padding: 4rem 3rem;
+    font-size: 1.6rem;
+    color: $color-secondary;
+    line-height: 2.5rem;
+    font-family: $font-text;
+  }
+
+  &__price-only {
+    justify-self: start;
+    font-size: 2rem;
+    margin-left: 2rem;
+  }
+  &__price-original {
+    color: $color-gery-light-2;
+    font-size: 3rem;
+  }
+  &__price-value {
+    font-size: 4rem;
+    color: $color-tertiary-light;
+  }
+  &__btn {
+    padding: 0.5rem 3rem;
+    margin-top: 1rem;
+  }
+
+  @media only screen and (max-width: $bp-md), only screen and (hover: none) {
+    &__card {
+      display: grid;
+      grid-template-rows: 1fr min-content;
+
+      &:hover &__side--front {
+        transform: rotateY(0);
+      }
+      &__side {
+        border-radius: 0;
+        box-shadow: none;
+      }
+      &__side--front{
+      }
+      &__side--back {
+        transform: rotateY(0);
+        position:static;
+        grid-template-rows: repeat(3, min-content);
+        grid-template-columns: repeat(2, min-content);
+        justify-content: space-around;
+        justify-items: center;
+        align-items: center;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+      }
+    }
+    &__price-only{
+      grid-column: 1 / -1;
+      width: 100%;
+      margin-left: 0;
+    }
+    &__btn {
+      grid-column: 1 / -1;
+      margin-left: 0;
+    }
+    &__detail {
+      padding: 6rem;
+      font-size: 2rem;
+      line-height: 1.6;
+    }
+  }
+  @media only screen and (max-width: $bp-sm), only screen and (hover: none) {
+
+  }
+}

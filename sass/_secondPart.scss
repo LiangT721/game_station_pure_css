@@ -1,0 +1,122 @@
+.second-part {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3rem;
+  grid-row-gap: 6rem;
+  justify-items: center;
+  align-items: center;
+
+  padding: 3rem;
+
+  @media only screen and (max-width:$bp-md) {
+    grid-template-columns: 1fr;
+  }
+
+  &__heading {
+    grid-column: 1 / -1;
+  }
+
+  &__text {
+    font-family: $font-text;
+    font-size: 2rem;
+    color: $color-secondary;
+    line-height: 3.5rem;
+    letter-spacing: 0.2rem;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem 0;
+  }
+
+  &__imgs {
+    min-height: 40rem;
+    align-self: center;
+    width: 100%;
+    position: relative;
+    // background-color: aqua;
+
+    @media only screen and (max-width:$bp-md) {
+      min-height: 60rem;
+    }
+    @media only screen and (max-width:$bp-sm) {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    &-img {
+      position: absolute;
+      width: 45%;
+      border-radius: 3px;
+      box-sizing: content-box;
+      transition: all .2s linear;
+      box-shadow: $shadow-light;
+      
+      @media only screen and (max-width:$bp-lg) {
+        width: 60%;
+      }
+
+      @media only screen and (max-width:$bp-md) {
+        width: 40%;
+      }
+      @media only screen and (max-width:$bp-sm) {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      &:hover {
+        outline: 3px solid $color-gery-light-2;
+        padding: 1rem;
+        z-index: 30;
+
+      }
+    }
+
+    &-img1 {
+      z-index: 20;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -100%);
+      @media only screen and (max-width:$bp-lg) {
+        transform: translate(-50%, -120%)
+      }
+      @media only screen and (max-width:$bp-md) {
+        transform: translate(-30%, -100%)
+      }
+    }
+    &-img2 {
+      z-index: 10;
+      left: 50%;
+      top: 50%;
+      transform: translate(-90%, -50%);
+      @media only screen and (max-width:$bp-lg) {
+        transform: translate(-80%, -50%)
+      }
+      @media only screen and (max-width:$bp-md) {
+        transform: translate(-80%, -20%)
+      }
+    }
+    &-img3 {
+      z-index: 15;
+      left: 50%;
+      top: 50%;
+      transform: translate(0, -20%);
+
+      @media only screen and (max-width:$bp-lg) {
+        transform: translate(-15%, 0%);
+      }
+      @media only screen and (max-width:$bp-md) {
+        transform: translate(-15%, 20%)
+      }
+    }
+    @media only screen and (max-width: $bp-sm) {
+      &-img1,
+      &-img2,
+      &-img3
+      {
+        left: 0;
+        top: 0;
+        transform: translate(0, 0)
+      }
+    }
+  }
+}

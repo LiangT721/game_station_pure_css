@@ -1,0 +1,72 @@
+.header {
+  height: 80vh;
+
+  background-image: linear-gradient(
+      rgba($color-primary-light, 0.75),
+      rgba($color-primary-dark, 0.75)
+    ),
+    url("../imgs/landing_bg_img_lg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+  display: grid;
+  grid-template-rows: 1fr 10rem 6rem 2fr;
+  justify-items: center;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-sm) {
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  &__logo {
+    width: 6rem;
+    height: 6rem;
+    justify-self: start;
+    align-self: start;
+    margin-top: 3rem;
+    margin-left: 3rem;
+  }
+
+  &__logo-icon {
+    width: 100%;
+    filter: drop-shadow($shadow-light);
+  }
+
+  &__heading-3 {
+    // margin-left: 10rem;
+    color: $color-primary-light;
+    letter-spacing: 1rem;
+    position: relative;
+    font-size: 3rem;
+    animation: moveInRight 0.8s linear 0.8s;
+    animation-fill-mode: backwards;
+
+    @media only screen and (max-width:$bp-sm) {
+      letter-spacing: .5rem;
+      font-size: 2rem;
+    }
+
+    &::after {
+      content: "Engjoy your game time!";
+      position: absolute;
+      left: 0;
+      transform: rotateX(180deg) skewX(-25deg) translateX(0.4rem);
+      top: 2.4rem;
+      background-image: linear-gradient(
+        to bottom,
+        rgba($color-primary-light, 0.1),
+        rgba($color-primary-light, 0.7)
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &__btn {
+    animation: moveInBottom 0.5s linear 1.2s;
+    animation-fill-mode: backwards;
+  }
+}

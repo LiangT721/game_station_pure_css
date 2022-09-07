@@ -1,0 +1,113 @@
+.btn {
+  cursor: pointer;
+  width: max-content;
+  padding: 1em 3rem;
+  font-family: $font-display;
+  font-size: 1.6rem;
+  color: $color-gery-light;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-tertiary, 0.9),
+    rgba($color-tertiary-light, 0.9)
+  );
+  box-shadow: $shadow-light;
+
+  &:hover {
+    background-image: linear-gradient(
+      to left top,
+      rgba($color-tertiary, 0.9),
+      rgba($color-tertiary-light, 0.9)
+    );
+    box-shadow: $shadow-dark;
+    transform: translateY(-2px);
+  }
+  &:active {
+    background-image: linear-gradient(
+      to left top,
+      rgba($color-tertiary, 0.9),
+      rgba($color-tertiary-light, 0.9)
+    );
+    box-shadow: $shadow-dark;
+    transform: translateY(2px);
+  }
+}
+
+.form {
+  display: grid;
+  grid-row-gap: 2rem;
+
+  &__group {
+    width: 80%;
+    font-family: $font-display;
+    @media only screen and (max-width: $bp-md) {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    border-radius: 2px;
+    border: none;
+    transition: all .3s linear;
+    border-bottom: 2px solid transparent;
+    display: block;
+    width: 90%;
+    
+    &::-webkit-input-placeholder {
+      color:$color-gery-light-2;
+    }
+    
+    &:focus{
+      outline: none;
+      border-bottom: 2px solid $color-primary;
+      box-shadow: $shadow-light;
+    }
+
+    &:focus:invalid {
+      border-bottom: 2px solid $color-alarm;
+    }
+    @media only screen and (max-width: $bp-md) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  &__label {
+    font-size: 1.3rem;
+    display: block;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-family: $font-text;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-gery-light-2;
+    transition: all .5s;
+  }
+
+  &__input:placeholder-shown + &__label{
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__btn {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+  }
+
+  @media only screen and (max-width: $bp-md) {
+    &__btns{
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+
+}

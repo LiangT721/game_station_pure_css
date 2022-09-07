@@ -1,0 +1,102 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.15;
+  &__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.new-games {
+  position: relative;
+  width: 100%;
+  background-color: rgba(#fff, 0.3);
+  min-height: 80vh;
+  padding: 10rem 0;
+  margin-bottom: 0;
+
+  &__container {
+    width: 60%;
+    min-width: min-content;
+    margin: 0 auto;
+    @media only screen and (max-width: $bp-sm) {
+      width: 80%;
+    }
+  }
+
+  &__box {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../imgs/console-bg.jpg);
+    background-size: contain;
+    display: grid;
+    grid-template-columns: minmax(15rem, 25rem) 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 15rem;
+    transform: skewX(-12deg);
+    margin-bottom: 6rem;
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: 18rem 1fr;
+    }
+    @media only screen and (max-width: $bp-sm) {
+      grid-template-columns: 15rem 1fr;
+      transform: skewX(-8deg);
+    }
+  }
+
+  &__shape {
+    width: 10rem;
+    height: 10rem;
+    background-color: $color-gery-light;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: skewX(12deg);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    @media only screen and (max-width: $bp-sm) {
+      transform: skewX(8deg);
+    }
+  }
+
+  &__img {
+    width: 80%;
+    object-fit: cover;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+    justify-self: start;
+    color: $color-gery-light;
+    text-transform: uppercase;
+    @media only screen and (max-width: $bp-sm) {
+      transform: skewX(8deg);
+    }
+  }
+
+  &__console {
+    font-size: 1.6rem;
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__name {
+    font-size: 2.3rem;
+    font-family: $font-display;
+  }
+
+  &__date {
+    font-size: 1.6rem;
+    font-family: $font-text;
+  }
+}

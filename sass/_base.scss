@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: $bp-md) {
+    font-size: 45%;
+  }
+}
+
+.heading-1 {
+  font-family: "Rubik Maze", cursive;
+  font-size: 7rem;
+  color: $color-gery-light;
+  text-shadow: 0 1px 5px rgba($color: #000000, $alpha: 0.5),
+    2px 2px 5px rgba($color: #000000, $alpha: 0.5),
+    3px 3px 5px rgba($color: #000000, $alpha: 0.5),
+    4px 4px 5px rgba($color: #000000, $alpha: 0.5),
+    5px 10px 2px rgba($color: #000000, $alpha: 0.5);
+
+  animation: moveInLeft 1s ease-out;
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 5rem;
+  }
+}
+
+.heading-2 {
+  background-image: linear-gradient(
+    to right bottom,
+    $color-tertiary,
+    $color-primary-light
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: $font-display;
+  font-size: 4rem;
+  text-align: center;
+  padding-bottom: 3rem;
+  filter: drop-shadow(0 2px 8px rgba($color: #000000, $alpha: 0.15));
+  transition: all 0.2s linear;
+
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 3rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+  &:hover {
+    transform: skewY(-2deg);
+  }
+}
+
+.heading-3 {
+  font-family: $font-display;
+}
